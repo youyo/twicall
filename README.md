@@ -11,6 +11,6 @@ https://twicall-0.herokuapp.com/api/call
 $ curl -v \
 	-X POST \
 	-H "Content-Type: application/json" \
-	-d '{"account-sid":"xxxx","auth-token":"xxxx","from":"+81xxxx","to":"+81xxxx","callback-url":"https://xxxx"}' \
+	-d '{"account-sid":"xxxx","auth-token":"xxxx","from":"+81xxxx","to":"+81xxxx,+81yyyy","callback-url":"https://xxxx"}' \
 	https://twicall-0.herokuapp.com/api/call
 ```

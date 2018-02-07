@@ -37,18 +37,23 @@ func apiCall(c echo.Context) error {
 		return c.JSON(http.StatusInternalServerError, Response{Response: nil, Exception: nil, Error: err})
 	}
 
-	twilio := gotwilio.NewTwilioClient(
-		request.AccountSid,
-		request.AuthToken,
-	)
+	exeption := []*gotwilio.Exception{}
+	err := new(error)
 
-	callbackParams := gotwilio.NewCallbackParameters(request.CallbackUrl)
+	numbers := strings.Split(request.To, ",")
+	for _, number := range numbers {
+		_, exep, err := callTwilio(request.AccountSid, request.AuthToken, request.From, number, request.CallbackUrl)
+		exeption = append(exeption, exep)
+		if err != nil {
+			return c.JSON(http.StatusOK, Response{Response: "success", Exception: exeption, Error: err})
+		}
+	}
 
-	response, exeption, err := twilio.CallWithUrlCallbacks(
-		request.From,
-		request.To,
-		callbackParams,
-	)
+	return c.JSON(http.StatusOK, Response{Response: "success", Exception: exeption, Error: *err})
+}
 
-	return c.JSON(http.StatusOK, Response{Response: response, Exception: exeption, Error: err})
+func callTwilio(accountSid, authToken, from, to, callbackUrl string) (*gotwilio.VoiceResponse, *gotwilio.Exception, error) {
+	twilio := gotwilio.NewTwilioClient(accountSid, authToken)
+	callbackParams := gotwilio.NewCallbackParameters(callbackUrl)
+	return twilio.CallWithUrlCallbacks(from, to, callbackParams)
 }
