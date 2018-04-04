@@ -40,8 +40,7 @@ func apiCall(c echo.Context) error {
 	exeption := []*gotwilio.Exception{}
 	err := new(error)
 
-	numbers := strings.Split(request.To, ",")
-	for _, number := range numbers {
+	for _, number := range request.To {
 		_, exep, err := callTwilio(request.AccountSid, request.AuthToken, request.From, number, request.CallbackUrl)
 		exeption = append(exeption, exep)
 		if err != nil {
