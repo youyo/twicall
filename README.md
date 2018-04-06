@@ -13,7 +13,7 @@ $ cat data.json
   "account-sid": "xxxx",
   "auth-token": "xxxx",
   "from": "+81xxxx",
-  "to": "+81xxxx,+81yyyy",
+  "to": ["+81xxxx","+81yyyy"],
   "callback-url": "https://xxxx"
 }
 
