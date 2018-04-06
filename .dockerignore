@@ -1,3 +1,4 @@
 .envrc
 .git*
 vendor/
+README.md

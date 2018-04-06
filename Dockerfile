@@ -1,4 +1,4 @@
-FROM golang:1.9-alpine
+FROM golang:1-alpine
 LABEL maintainer "youyo <1003ni2@gmail.com>"
 
 ENV DIR=/go/src/github.com/youyo/twicall
