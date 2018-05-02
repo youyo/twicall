@@ -2,19 +2,30 @@
 
 
 [[projects]]
-  name = "github.com/labstack/echo"
+  name = "github.com/dgrijalva/jwt-go"
   packages = ["."]
-  revision = "b338075a0fc6e1a0683dbf03d09b4957a289e26f"
-  version = "3.2.6"
+  revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
+  version = "v3.2.0"
+
+[[projects]]
+  name = "github.com/labstack/echo"
+  packages = [
+    ".",
+    "middleware"
+  ]
+  revision = "6d227dfea4d2e52cb76856120b3c17f758139b4e"
+  version = "3.3.5"
 
 [[projects]]
   name = "github.com/labstack/gommon"
   packages = [
+    "bytes",
     "color",
-    "log"
+    "log",
+    "random"
   ]
-  revision = "57409ada9da0f2afad6664c49502f8c50fbd8476"
-  version = "0.2.3"
+  revision = "588f4e8bddc6cb45c27b448e925c7fd6a5545434"
+  version = "0.2.5"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -32,7 +43,7 @@
   branch = "master"
   name = "github.com/sfreiberg/gotwilio"
   packages = ["."]
-  revision = "58125ef28e4b5d7ab5328593099ae8cac5fcf6a2"
+  revision = "929c4ff2451b204e69dcb1062cd59c9810ebf606"
 
 [[projects]]
   branch = "master"
@@ -53,17 +64,17 @@
     "acme",
     "acme/autocert"
   ]
-  revision = "d9133f5469342136e669e85192a26056b587f503"
+  revision = "613d6eafa307c6881a737a3c35c0e312e8d3a8c5"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "37707fdb30a5b38865cfb95e5aab41707daec7fd"
+  revision = "78d5f264b493f125018180c204871ecf58a2dce1"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "a1fc94cd2378822838128886dc366d93ce1452d240e9b16c79257ca160279f57"
+  inputs-digest = "35f0828f5a09a22263ead330db71bf32e8a10f6bfaee60262a741c020d674125"
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 	"github.com/sfreiberg/gotwilio"
 )
 
@@ -15,6 +16,7 @@ var (
 
 func main() {
 	e := echo.New()
+	e.Use(middleware.Logger())
 
 	e.GET("/", func(c echo.Context) error { return inputHttp(c) })
 
