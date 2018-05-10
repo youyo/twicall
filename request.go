@@ -8,5 +8,6 @@ type (
 		From        string   `json:"from"`
 		To          []string `json:"to"`
 		CallbackUrl string   `json:"callback-url"`
+		Method      string   `json:"method"`
 	}
 )

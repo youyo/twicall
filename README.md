@@ -14,7 +14,8 @@ $ cat data.json
   "auth-token": "xxxx",
   "from": "+81xxxx",
   "to": ["+81xxxx","+81yyyy"],
-  "callback-url": "https://xxxx"
+  "callback-url": "https://xxxx",
+  "method": "GET"  // if this column is empty, default value is 'GET'.
 }
 
 $ curl -v \
